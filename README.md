@@ -40,7 +40,7 @@ To get started with this project, you’ll need:
 
 #### Tecknosap website
 
-![Website Deployment](./assets/Animation-web.gif)
+<img src="https://github.com/tecknosap/aks-web-deployment/blob/main/Animation-web.gif?raw=true" alt="Website Deployment Animation" width="600" height="300" />
 
 ## Setup and Usage
 
