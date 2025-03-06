@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mywebsite-deployment
+  name: mywebsite-deployment  # Name of the deployment
 spec:
-  replicas: 2
+  replicas: 2  # Number of replicas (pods)
   selector:
     matchLabels:
-      app: mywebsite
+      app: mywebsite  # Selector to match the pods
   template:
     metadata:
       labels:
-        app: mywebsite  # Ensure this matches the service selector
+        app: mywebsite  # Label for the pods, should match the selector
     spec:
       containers:
-        - name: mywebsite
-          image: tecknosap.azurecr.io/mywebsite:v1  # Corrected image reference
+        - name: mywebsite  # Name of the container
+          image: tecknosap.azurecr.io/mywebsite:v1  # Docker image reference
           ports:
-            - containerPort: 80
+            - containerPort: 80  # Expose container on port 80
