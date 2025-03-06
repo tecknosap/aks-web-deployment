@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome to Tecknosap</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #4CAF50;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #777;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .countdown div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 60px;
+        }
+
+        .countdown div span {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .countdown div label {
+            font-size: 0.9rem;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to Tecknosap!</h1>
+        <p>The site is coming soon!</p>
+        <div class="countdown" id="countdown">
+            <div>
+                <span id="days">0</span>
+                <label>Days</label>
+            </div>
+            <div>
+                <span id="hours">0</span>
+                <label>Hours</label>
+            </div>
+            <div>
+                <span id="minutes">0</span>
+                <label>Minutes</label>
+            </div>
+            <div>
+                <span id="seconds">0</span>
+                <label>Seconds</label>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Set the target date for the countdown (12 months from now)
+        const now = new Date();
+        const targetDate = new Date(now.getFullYear(), now.getMonth() + 12, now.getDate(), 0, 0, 0).getTime();
+
+        // Update the countdown every second
+        const countdownInterval = setInterval(() => {
+            const currentTime = new Date().getTime();
+            const timeLeft = targetDate - currentTime;
+
+            // Calculate days, hours, minutes, and seconds
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            // Update the countdown elements
+            document.getElementById("days").textContent = days;
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
+
+            // If countdown is complete
+            if (timeLeft <= 0) {
+                clearInterval(countdownInterval);
+                document.getElementById("countdown").innerHTML = "The site is live!";
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>
