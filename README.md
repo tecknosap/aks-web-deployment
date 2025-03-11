@@ -91,12 +91,12 @@ Once the external IP is available, you can access the website by navigating to t
 #### Step 5: Clean Up
 To clean up and remove the resources:
 
-#### Destroy the Terraform-managed infrastructure:
+##### Destroy the Terraform-managed infrastructure:
 terraform destroy
 Optionally, clean up the Azure resources manually if needed.
 
-#### License
+##### License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-#### Conclusion
+##### Conclusion
 This project demonstrates the integration of multiple Azure services, including AKS, ACR, and Terraform for infrastructure management. It provides a simple yet effective way to deploy a web application in a Kubernetes environment and expose it using a LoadBalancer.
